@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block title %}
+    Alvin's Portofolio
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/alvin.jpg'%}" alt="Alvin - Blog 2025">
+            <h2>Alvin's Portofolio</h2>
+        </header>
+        <p>
+            A proactive Information Systems student with an experience in data analysis, ETL 
+            processes, and data visualization using Python, Power BI, and Tableau. Proven 
+            ability to optimize business processes through data insights, achieving measurable 
+            results in various academic projects.  
+        </p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Project</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I do?</h2>
+            <p>
+                I am a dedicated Information Systems student with a strong passion for data analysis and visualization. I work on projects that involve analyzing data, building predictive models, and creating interactive dashboards using tools like Python, Power BI, and Tableau. My goal is to turn complex data into meaningful insights that help businesses make better decisions. I also enjoy collaborating with teams and continuously learning new skills to improve my expertise in data analytics and big data technologies.
+            </p>
+    </section>
+{% endblock %}
